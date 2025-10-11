@@ -11,16 +11,16 @@
         font-family: arial, sans-serif;
         text-align: center;
       } .in{
-        display: inline-block;
+        display: block;
         padding: 10px;
         color: white;
         border: 1px solid white;
         background-color: black;
         caret-color: yellow;
         margin: 5px;
-        font-size: 20px;
+        font-size: 17px;
         border-radius: 5px;
-        width: 100px;
+        width: 300px;
         overflow: auto;
       } .in::placeholder{
         color: yellow;
@@ -29,7 +29,7 @@
   </head>
   <body>
     <h1>Bloğunu oluştur</h1>
-    <div id="blok"></div>
+    <div style="width: 200px; background-color: rgb(100, 100 ,100);" id="blok"></div>
     <h2>Tercihler</h2>
     <input class="in" id="background" placeholder="Arkaplan rengi?(renk kodu veya İngilizce bir renk giriniz)">
     <input class="in" id="borderPx" placeholder="Çerçeve kalınlığı?(girilen değer piksel olarak varsayılır)">
