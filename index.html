@@ -9,19 +9,17 @@
         color:white;
         padding:10px;
         font-family: arial, sans-serif;
-        text-align: center;
       } .in{
         display: block;
         padding: 10px;
-        color: white;
+        color: yellow;
         border: 1px solid white;
         background-color: black;
         caret-color: yellow;
         margin: 5px;
         font-size: 17px;
         border-radius: 5px;
-        width: 300px;
-        overflow: auto;
+        width: 100%;
       } .in::placeholder{
         color: yellow;
       }
@@ -32,13 +30,19 @@
     <div style="width: 200px;height:200px; background-color: rgb(100, 100 ,100);" id="blok"></div>
     <h2>Tercihler</h2>
     <input class="in" id="background" placeholder="Arkaplan rengi?(renk kodu veya İngilizce bir renk giriniz)">
-    <input class="in" id="borderPx" placeholder="Çerçeve kalınlığı?(girilen değer piksel olarak varsayılır)">
+    <input class="in" id="kalinlik" placeholder="Genişliği?(girilen değer piksel olarak varsayılır)">
+    <input class="in" id="cerceveR" placeholder="Çerçeve rengi?(renk kodu veya İngilizce bir renk giriniz)">
+    <input type="number" class="in" id="borderPx" placeholder="Çerçeve kalınlığı?(girilen değer piksel olarak varsayılır)">
     <button onclick="kontrol()" class="in">Bloğu göster</button>
     <script>
       const blok = document.getElementById("blok").style;
       function kontrol(){
         const arkaPlan = document.getElementById("background").value;
-      const cercevePx = document.getElementById("borderPx").value;
+        const cercevePx = document.getElementById("borderPx").value;
+        const genislik = document.getElementById("kalinlik").value;
+        const cerceveR = document.getElementById("cerceveR").value;
+        blok.borderColor=cerceveR;
+        blok.width=genislik+"px";
         blok.backgroundColor=arkaPlan;
         blok.borderWidth=cercevePx+"px";
       }
