@@ -29,16 +29,16 @@
   </head>
   <body>
     <h1>Bloğunu oluştur</h1>
-    <div style="width: 200px; background-color: rgb(100, 100 ,100);" id="blok"></div>
+    <div style="width: 200px;height:200px; background-color: rgb(100, 100 ,100);" id="blok"></div>
     <h2>Tercihler</h2>
     <input class="in" id="background" placeholder="Arkaplan rengi?(renk kodu veya İngilizce bir renk giriniz)">
     <input class="in" id="borderPx" placeholder="Çerçeve kalınlığı?(girilen değer piksel olarak varsayılır)">
-    <button onclick="kontrol()">Bloğu göster</button>
+    <button onclick="kontrol()" class="in">Bloğu göster</button>
     <script>
       const blok = document.getElementById("blok").style;
-      const arkaPlan = document.getElementById("background").value;
-      const cercevePx = document.getElementById("borderPx").value;
       function kontrol(){
+        const arkaPlan = document.getElementById("background").value;
+      const cercevePx = document.getElementById("borderPx").value;
         blok.backgroundColor=arkaPlan;
         blok.borderWidth=cercevePx+"px";
       }
