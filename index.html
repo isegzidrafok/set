@@ -31,11 +31,22 @@
     <h2>Tercihler</h2>
     <input class="in" id="background" placeholder="Arkaplan rengi?(renk kodu veya İngilizce bir renk giriniz)">
     <input class="in" id="kalinlik" placeholder="Genişliği?(girilen değer piksel olarak varsayılır)">
+    <button id="dottedId" onclick="cerceveTur(1)">Noktalı çerçeve</button><button onclick="cerceveTur(2)" id="dashedId">Çizgili çerçeve</button>
+    <button onclick="cerceveTur(3)" id="doubleId">İkili çerçeve</button><button onclick="cerceveTur(4)" id="solidId">Düz çerçeve</button>
     <input class="in" id="cerceveR" placeholder="Çerçeve rengi?(renk kodu veya İngilizce bir renk giriniz)">
     <input type="number" class="in" id="borderPx" placeholder="Çerçeve kalınlığı?(girilen değer piksel olarak varsayılır)">
     <button onclick="kontrol()" class="in">Bloğu göster</button>
     <script>
       const blok = document.getElementById("blok").style;
+      let duz = false;
+      let cizgili = false;
+      let ikili = false;
+      let noktali = false;
+      const duzId = document.getElementById("solidId");
+      const cizgiliId = document.getElementById("dashedId");
+      const ikiliId = document.getElementById("doubleId");
+      const noktaliId = document.getElementById("dottedId");
+      let dizi = [duz, cizgili, ikili, noktali];
       function kontrol(){
         const arkaPlan = document.getElementById("background").value;
         const cercevePx = document.getElementById("borderPx").value;
@@ -45,6 +56,17 @@
         blok.width=genislik+"px";
         blok.backgroundColor=arkaPlan;
         blok.borderWidth=cercevePx+"px";
+        if(noktali){blok.borderStyle="dotted";};
+      } function cerceveTur(x){
+        if(x==1){
+          noktali = true;
+          noktaliId.style.backgroundColor="yellow";
+          dizi.filter(nokta => nokta!=noktali).forEach(falseler=>{
+            falseler = false;
+          });
+        }else if(x==2){
+          
+        };
       }
     </script>
   </body>
