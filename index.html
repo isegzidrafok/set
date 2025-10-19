@@ -21,7 +21,8 @@
         border-radius: 5px;
         width: 100%;
       } .in::placeholder{
-        color: yellow;
+        color: rgb(150, 150, 0);
+        font-weight: bold;
       }
     </style>
   </head>
@@ -46,7 +47,8 @@
       const cizgiliId = document.getElementById("dashedId");
       const ikiliId = document.getElementById("doubleId");
       const noktaliId = document.getElementById("dottedId");
-      let dizi = [duz, cizgili, ikili, noktali];
+      let dizi = [noktali, cizgili, ikili, duz];
+      let dizi2 = [noktaliId, cizgiliId, ikiliId, duzId];
       function kontrol(){
         const arkaPlan = document.getElementById("background").value;
         const cercevePx = document.getElementById("borderPx").value;
@@ -58,16 +60,10 @@
         blok.borderWidth=cercevePx+"px";
         if(noktali){blok.borderStyle="dotted";};
       } function cerceveTur(x){
-        if(x==1){
-          noktali = true;
-          noktaliId.style.backgroundColor="yellow";
-          dizi.filter(nokta => nokta!=noktali).forEach(falseler=>{
-            falseler = false;
-          });
-        }else if(x==2){
-          
-        };
-      }
+          dizi.forEach(t=>{t=true;}).filter(kart=>kart!==dizi[x-1]).forEach(falseler=>{
+            falseler = false;}); dizi2.forEach(t=>{t.style.border="1px solid yellow";})
+        .filter(kart=>kart!==dizi2[x-1]).forEach(f=>{f.style.border="1px solid white";});
+        }
     </script>
   </body>
 </html>
